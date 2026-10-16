@@ -25,6 +25,7 @@ key = 'G'
 def dfs_print(tree):
     '''
     just printing tree using dfs, no search for now
+    used a stack n not recursion
     '''
     stack = []
     traversal_values = []
@@ -45,3 +46,18 @@ def dfs_print(tree):
     return traversal_values
 
 print(dfs_print(tree))
+
+def dfs_search(tree,key):
+    values = dfs_print(tree)
+    if key in values:
+        pos =  values.index(key) + 1
+        #assuming root starts at position 1
+        return key, pos
+    return None
+
+print(dfs_search(tree, key='A'))
+print(dfs_search(tree, key='G'))
+print(dfs_search(tree, key='F'))
+print(dfs_search(tree, key='Z'))
+
+
